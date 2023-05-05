@@ -1,0 +1,31 @@
+{
+    "name" : "Chrome - Login - Li Cookie",
+    "description":"Chrome - Login - Li Cookie",
+    "manifest_version":3,
+    "version":"1.0",
+    "action":{
+        "default_popup":"views/popup-signin.html"
+    },
+    "permissions":[
+        "storage",          
+        "notifications",
+        "contextMenus",
+        "activeTab",
+        "tabs",
+        "cookies" ,
+        "alarms"
+    ],
+    "icons": {
+        "16": "assets/img/icon-16x16.png",
+        "48": "assets/img/icon-48x48.png",
+        "128": "assets/img/icon-128x128.png"
+      },
+    "background": {
+        "service_worker": "background.js" 
+      },
+      "host_permissions": [
+        "*://*/*"
+      ] 
+
+      
+}

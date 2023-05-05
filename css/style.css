@@ -1,0 +1,129 @@
+.common-main-div, body{
+    width: 300px;
+    min-height: 400px;
+}
+
+.ex-login-head h2{
+    color:#1e385d;
+    font-size: 38px;
+    margin-bottom: 0px;
+    font-family: monospace;
+}
+.popup-signout h2{
+    color:#1e385d;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 0px;
+    font-family: monospace;
+}
+.ex-login-head{
+    padding-left: 7px;
+}
+.ex-login-head p{
+    color:#1e385d;
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.common-main-div input{
+    background: #f2f4f6 !important;
+    height: 35px;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-right: 0;
+        margin-left: 0;
+}
+
+.common-main-div label{
+    color: #537099;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    width: 94%;
+    margin-top: 10px;
+    font-family: monospace;
+}
+.ex-login button{
+    width: 96%;
+    height: 55px;
+    background: #1e385d;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.popup-signout button, .wel-back button{
+    height: 55px;
+    background: #1e385d;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+    padding-left:25px;
+    padding-right: 25px;
+}
+.wel-back span{
+    color: #1e385d;
+    text-shadow: none;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+
+#ar-welcome, #ar-logout{
+    display:none;
+}
+
+
+#ar-logout .wel-back, #ar-welcome .popup-signout{
+    position: absolute;
+        top: 50%;
+        left: 0%;
+        -ms-transform: translate(0%, -50%);
+        transform: translate(0%, -50%);
+        text-align: center;
+    }
+
+    #wl-button{
+        margin-top:25px;
+    }
+
+
+/********************* Loader ***************/
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #1e385d;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #loader{
+    display: none;
+  }
