@@ -64,7 +64,7 @@
             <h2>Welcome</h2>
             <p>Sign in continue</p>
         </div> 
-    <form>
+    <form id="loginform">
         <label>Username</label> 
         <input type="text" name="email" id="email" value="" placeholder="Username" required>
         
@@ -73,6 +73,7 @@
         
         <button  type="submit" >Login</button>
     </form>
+	<button id="login-signup" class="login-signup-txt">Sign Up</button>
     </div>
     </div>
 
@@ -95,14 +96,37 @@
 </div>
 </div>
 </div>
-    
+
+    <div id="signup-form" class="common-main-div">
+        <div class="ex-login-head">
+            <h2>Sign up</h2>
+            <br/>
+        </div>
+        <div>
+        <form id="signupform">
+            <label>User Name</label>
+            <input type="text" name="user_name" id="user_name" placeholder="Name" required>
+            <label>Email</label>
+            <input type="email" name="user_email" id ="user_email" placeholder="Email" required>
+            <label>Password</label>
+            <input type="password" name="user_pass" id="user_pass"  placeholder="Password" required>
+            <label>Confirm Password </label>
+            <input type="password" name="user-con-pass" id="user_con_pass"  placeholder="Confirm Password" required>
+            <span id="wrong_pass_alert"></span>
+            <button id="sbtn"  class="full-btn full-btn-capitalize" type="submit" >Register & Signin</button>
+        </form>
+
+            <button id="back-to-login" class="login-signup-txt">Back to Login</button>
+        </div>
+    </div>
+
 <h2>Linkedin Session Cookie:</h2> 
-<div class=" input-group mb-3">
+<div class=" input-group mb-3"> 
     <input class="form-control" type="text" id="cookie_value_li_at" placeholder=" ">
 </div>
+    
 
-
-    <script src="../js/popup-sign-in-script.js"></script>
+<script src="../js/popup-sign-in-script.js"></script>
 </body>
 
 </html>

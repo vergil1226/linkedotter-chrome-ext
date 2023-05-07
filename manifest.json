@@ -2,7 +2,7 @@
     "name" : "Chrome - Login - Li Cookie",
     "description":"Chrome - Login - Li Cookie",
     "manifest_version":3,
-    "version":"1.0",
+    "version":"2.0",
     "action":{
         "default_popup":"views/popup-signin.html"
     },

@@ -14,7 +14,7 @@ button.addEventListener('mouseleave', () => {
     });
 });
 
-document.querySelector('form').addEventListener('submit', event => {
+document.querySelector('#loginform').addEventListener('submit', event => {
     event.preventDefault();
 
     const email = document.querySelector('#email').value;
@@ -32,6 +32,7 @@ document.querySelector('form').addEventListener('submit', event => {
                     //window.location.replace('../views/popup-signout.html');
                     document.getElementById("loader").style.display = "block";
                     document.getElementById("ar-login").style.display = "none";
+                    document.getElementById("signup-form").style.display = "none";
                     document.getElementById("ar-welcome").style.display = "block";
                     document.getElementById("loader").style.display = "none";
                 }else{
@@ -63,6 +64,7 @@ is_user_signed_in()
                 document.getElementById("ar-welcome").style.display = "none";
                 document.getElementById("ar-login").style.display = "none";
                 document.getElementById("loader").style.display = "block";
+                document.getElementById("signup-form").style.display = "none";
 
                 setTimeout(showPage, 100);
                 function showPage() {
@@ -131,8 +133,9 @@ buttonn.addEventListener('click', () => {
                setTimeout(showPage, 100);
             function showPage() {
                document.getElementById("ar-login").style.display = "block";
+               document.getElementById("signup-form").style.display = "none";
                document.getElementById("loader").style.display = "none";
-                }
+            }
                
         }
     );
@@ -229,3 +232,91 @@ buttonl.addEventListener('click', () => {
 
 
 
+
+/*****************Sign Up / login Hide Show ****************/
+
+    const buttonlog = document.querySelector('#login-signup');
+    buttonlog.addEventListener('click',() => {
+        document.getElementById("signup-form").style.display = "block";
+        document.getElementById("ar-login").style.display = "none";
+    });
+
+
+    const buttonsign = document.querySelector('#back-to-login');
+
+    buttonsign.addEventListener('click',() => {
+        document.getElementById("signup-form").style.display = "none";
+        document.getElementById("ar-login").style.display = "block";
+       event.preventDefault(); 
+
+    });   
+     
+    document.querySelector('#signupform').addEventListener('submit', event => {
+        event.preventDefault();    
+        
+        const user_name = document.querySelector('#user_name').value;
+        const user_email = document.querySelector('#user_email').value;
+        const user_pass = document.querySelector('#user_pass').value; 
+
+        if (user_name && user_email && user_pass) {
+            
+            // send message to background script with email and password 
+            document.getElementById("loader").style.display = "block";
+            chrome.runtime.sendMessage({ message: 'signup', 
+                payload: { user_name,    user_email , user_pass}},
+                function (response) {
+                     
+                        if (response === 'success'){
+                            document.getElementById("loader").style.display = "none";
+                            //window.location.replace('../views/popup-signout.html');
+                            document.getElementById("loader").style.display = "block";
+                            document.getElementById("ar-login").style.display = "none";
+                            document.getElementById("signup-form").style.display = "none";
+                            document.getElementById("ar-welcome").style.display = "block";
+                            document.getElementById("loader").style.display = "none";
+                        }else{
+                            document.getElementById("loader").style.display = "none";
+                            alert(response)
+                        } 
+                    }
+            );
+
+        } else {
+            document.getElementById("loader").style.display = "none";
+            document.querySelector('#user_email').placeholder = "Enter an email.";
+            document.querySelector('#user_pass').placeholder = "Enter a password.";
+            document.querySelector('#user_name').placeholder = "Enter a Username.";
+
+            document.querySelector('#user_email').style.backgroundColor = 'red';
+            document.querySelector('#user_pass').style.backgroundColor = 'red';
+            document.querySelector('#user_name').style.backgroundColor = 'red';
+
+            document.querySelector('#user_email').classList.add('white_placeholder');
+            document.querySelector('#user_pass').classList.add('white_placeholder');
+            document.querySelector('#user_name').classList.add('white_placeholder');
+        } 
+
+    });
+
+
+
+
+    const passkeyup = document.querySelector('#user_con_pass');
+
+    passkeyup.addEventListener('keyup', () =>{
+
+        var pass = document.getElementById('user_pass').value;
+        var confirm_pass = document.getElementById('user_con_pass').value;
+        if (pass != confirm_pass) {
+            document.getElementById('wrong_pass_alert').style.color = 'red';
+            document.getElementById('wrong_pass_alert').innerHTML= '☒ Use same password';
+            //document.getElementById('create').disabled = true;
+            //document.getElementById('create').style.opacity = (0.4);
+        } else {
+            document.getElementById('wrong_pass_alert').style.color = 'green';
+            document.getElementById('wrong_pass_alert').innerHTML ='🗹 Password Matched';
+           // document.getElementById('create').disabled = false;
+           // document.getElementById('create').style.opacity = (1);
+        }
+
+    });

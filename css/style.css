@@ -1,6 +1,7 @@
 .common-main-div, body{
     width: 300px;
     min-height: 400px;
+    height: 100%;;
 }
 
 .ex-login-head h2{
@@ -46,7 +47,7 @@
     margin-top: 10px;
     font-family: monospace;
 }
-.ex-login button{
+/* .ex-login button{
     width: 96%;
     height: 55px;
     background: #1e385d;
@@ -56,6 +57,22 @@
     letter-spacing: 5px;
     margin-top: 10px;
     cursor: pointer;
+} */
+
+.full-btn{
+    width: 96%;
+    height: 55px;
+    background: #1e385d;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.full-btn-capitalize{ 
+    text-transform: capitalize; 
 }
 
 .popup-signout button, .wel-back button{
@@ -97,6 +114,27 @@
         margin-top:25px;
     }
 
+    .login-signup-txt{
+        text-align: center;
+        color: #1e385d;
+        font-size: 15px;
+        text-decoration: underline;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        margin-bottom: 30px;
+        padding: 0;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    display: block;
+    background: transparent;
+    cursor: pointer;
+
+    }
+
+    #signup-form{
+        display: none;
+    }
 
 /********************* Loader ***************/
 #loader {

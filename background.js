@@ -17,6 +17,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             .then(res => sendResponse(res))
             .catch(err => console.log(err));
         return true;
+    }else if (request.message === 'signup') {
+        user_signup_api(request.payload)
+            .then(res => sendResponse(res))
+            .catch(err => console.log(err));
+        return true;
     }else if (request.message === 'page_loaded') { 
 		getCookies("https://www.linkedin.com",cookie_name_to_use, function (value) { 
 			sendResponse(value) 
@@ -155,7 +160,38 @@ async function startRequest() {
 }
 
 
-
+function user_signup_api( user_info) {
+    
+       
+        var raw = JSON.stringify({
+            "username": user_info.user_name,
+            "email": user_info.user_email,
+            "password": user_info.user_pass
+          });
+          
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json"); 
+        
+          return fetch(serverEndPointUrl+'/api/auth/signup', {
+            method: 'POST',
+            headers: myHeaders,
+             body: raw
+        }).then((response) => { 
+            return response.json().then((data) => { 
+                if(!!data.message && (data.token===undefined || data.token===null)){
+                    return data.message;
+                }else{
+                    chrome.storage.local.set({ userStatus: true,accessToken: data.token,user_info }, function (response) {
+                        user_signed_in = true; 
+                    }); 
+                    startRequest();
+                    return 'success';
+                } 
+            }).catch((err) => {
+                console.log(err);
+            }) 
+        });  
+}
 
 function flip_user_status(signIn, user_info) {
     if (signIn) {
