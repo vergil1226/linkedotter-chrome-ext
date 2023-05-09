@@ -1,7 +1,8 @@
 .common-main-div, body{
     width: 300px;
     min-height: 400px;
-    height: 100%;;
+    height: 100%;
+    ;
 }
 
 .ex-login-head h2{
@@ -31,10 +32,10 @@
 .common-main-div input{
     background: #f2f4f6 !important;
     height: 35px;
-        border-radius: 10px;
-        font-size: 16px;
-        margin-right: 0;
-        margin-left: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .common-main-div label{
@@ -71,10 +72,12 @@
     cursor: pointer;
 }
 
-.full-btn-capitalize{ 
-    text-transform: capitalize; 
+.full-btn-capitalize{
+    text-transform: capitalize;
 }
-
+.wel-back {
+   width: 100%; 
+}
 .popup-signout button, .wel-back button{
     height: 55px;
     background: #1e385d;
@@ -90,7 +93,7 @@
 .wel-back span{
     color: #1e385d;
     text-shadow: none;
-    font-size: 35px;
+    font-size: 22px;
     font-weight: 500;
     margin-bottom: 25px;
 }
@@ -103,26 +106,26 @@
 
 #ar-logout .wel-back, #ar-welcome .popup-signout{
     position: absolute;
-        top: 50%;
-        left: 0%;
-        -ms-transform: translate(0%, -50%);
-        transform: translate(0%, -50%);
-        text-align: center;
-    }
+    top: 40%;
+    left: 0%;
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    text-align: center;
+}
 
-    #wl-button{
-        margin-top:25px;
-    }
+#wl-button{
+    margin-top:25px;
+}
 
-    .login-signup-txt{
-        text-align: center;
-        color: #1e385d;
-        font-size: 15px;
-        text-decoration: underline;
-        font-weight: 600;
-        letter-spacing: 1.1px;
-        margin-bottom: 30px;
-        padding: 0;
+.login-signup-txt{
+    text-align: center;
+    color: #1e385d;
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    margin-bottom: 30px;
+    padding: 0;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 25px;
@@ -130,11 +133,11 @@
     background: transparent;
     cursor: pointer;
 
-    }
+}
 
-    #signup-form{
-        display: none;
-    }
+#signup-form{
+    display: none;
+}
 
 /********************* Loader ***************/
 #loader {
@@ -150,18 +153,122 @@
     border-top: 10px solid #1e385d;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
 
-  #loader{
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#loader{
     display: none;
+}
+form {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+input {
+    margin: 10px;
+    font-size: 120%;
+    width: 90%;
+    height: 5%;
+    padding: 10px;
+    border: none;
+    font-family: monospace;
+    /* transition-duration: 0.3s; */
+}
+button {
+    font-size: 200%;
+    background-color: #f5c2e0;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: black;
+    font-family: monospace;
+    font-weight: bold;
+    /* transition-duration: 0.3s; */
+    padding: 10px;
+    margin-top: 1%;
+}
+.white_placeholder::placeholder {
+    color: white;
+}
+#clipboard{
+    width: 24px;
+    margin-right: 5px;
+    margin-top: 15px; 
+    margin-bottom: -5px;
+    cursor: pointer;
+}
+#copyClipboard{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#logo{
+    width: 24px;
+    margin-right: 5px;
+    margin-top: 15px; 
+    margin-bottom: -6px; 
+}
+#headerTitle{
+    font-size: 24px;
+}
+.mt-10{
+    margin-top:10px 
+}
+
+#messageData{
+    font-size: 16px;
+    color: green;
+    display: none;
+    margin: 25px 0px 0px 45px; 
+    position: absolute;
+    text-align: center;
+}
+
+
+.hideMeAfterSeconds {
+  animation: hideShowAnimation 0s ease-in 5s;
+  animation-fill-mode: forwards;
+}
+
+.hideMeAfterSecondsAlt {
+  animation: showHideAnimation 0s ease-in 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes hideShowAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
+}
+@keyframes showHideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}

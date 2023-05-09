@@ -1,132 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div id="loader"></div>
+        <div id="ar-login" class="common-main-div">
+            <div class="ex-login">
+                <div class="ex-login-head">
+                    <img id="logo" src="/assets/img/icon-128x128.png">  <span id="headerTitle">Welcome</span>
+                </div> 
+                <form id="loginform">
+                    <label>Username</label> 
+                    <input type="text" name="email" id="email" value="" placeholder="Username" required>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-        
-        form {
-            align-items: center;
-            display: flex;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            box-sizing: border-box;
-            background-color: #fff;
-            flex-wrap: wrap;
-        }
+                    <label>Password</label>
+                    <input type="password" name="password" id="password" value="" placeholder="Password" required>
 
-        input {
-            margin: 10px;
-            font-size: 120%;
-            width: 90%;
-            height: 5%;
-            padding: 10px;
-            border: none;
-            font-family: monospace;
-            /* transition-duration: 0.3s; */
-        }
+                    <button  type="submit" >Login</button>
+                </form>
+                <button id="login-signup" class="login-signup-txt">Sign Up</button>
+            </div>
+        </div>
+        <div id="ar-welcome" class="common-main-div">
+            <div class="popup-signout">
+                <div>
+                    <h2>Welcome Dashboard</h2>
+                    <button id="wl-dash" type="submit">Sign Out</button>
+                </div>
+            </div>
+        </div>
+        <div id="ar-logout" class="common-main-div">
+            <div class="wel-back">
+                <div>
+                    <div> <img id="logo" src="/assets/img/icon-128x128.png"><span id="message">Linkedin Session Cookie</span><span id="name"></span>  </div>
+                    <div class=" input-group mt-10"> 
+                        <input class="form-control" type="text" id="cookie_value_li_at" placeholder=" ">
+                         <img id="clipboard" src="/assets/img/copy.png"> <span id="copyClipboard">Click to Copy</span>
+                    </div>
 
-        
-
-        button {
-            font-size: 200%;
-            background-color: #f5c2e0;
-            border-radius: 5px;
-            border: none;
-            text-align: center;
-            color: black;
-            font-family: monospace;
-            font-weight: bold;
-            /* transition-duration: 0.3s; */
-            padding: 10px;
-            margin-top: 1%;
-        }
-
-        .white_placeholder::placeholder {
-            color: white;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="loader"></div>
-   
-     
-    <div id="ar-login" class="common-main-div">
-        <div class="ex-login">
+                    <button id="wl-button" type="submit">Sign Out</button>
+                    <span id="messageData"></span>
+                </div>
+            </div>
+        </div>
+        <div id="signup-form" class="common-main-div">
             <div class="ex-login-head">
-            <h2>Welcome</h2>
-            <p>Sign in continue</p>
-        </div> 
-    <form id="loginform">
-        <label>Username</label> 
-        <input type="text" name="email" id="email" value="" placeholder="Username" required>
-        
-        <label>Password</label>
-        <input type="password" name="password" id="password" value="" placeholder="Password" required>
-        
-        <button  type="submit" >Login</button>
-    </form>
-	<button id="login-signup" class="login-signup-txt">Sign Up</button>
-    </div>
-    </div>
-
-
-    <div id="ar-welcome" class="common-main-div">
-        <div class="popup-signout">
-    <div>
-        <h2>Welcome Dashboard</h2>
-        <button id="wl-dash" type="submit">Sign Out</button>
-    </div>
-    </div>
-</div>
-
-
-<div id="ar-logout" class="common-main-div">
-    <div class="wel-back">
-<div>
-    <span id="message">Welcome Back,</span><span id="name"></span>
-    <button id="wl-button" type="submit">Sign Out</button>
-</div>
-</div>
-</div>
-
-    <div id="signup-form" class="common-main-div">
-        <div class="ex-login-head">
-            <h2>Sign up</h2>
-            <br/>
+                <h2>Sign up</h2>
+                <br/>
+            </div>
+            <div>
+                <form id="signupform">
+                    <label>User Name</label>
+                    <input type="text" name="user_name" id="user_name" placeholder="Name" required>
+                    <label>Email</label>
+                    <input type="email" name="user_email" id ="user_email" placeholder="Email" required>
+                    <label>Password</label>
+                    <input type="password" name="user_pass" id="user_pass"  placeholder="Password" required>
+                    <label>Confirm Password </label>
+                    <input type="password" name="user-con-pass" id="user_con_pass"  placeholder="Confirm Password" required>
+                    <span id="wrong_pass_alert"></span>
+                    <button id="sbtn"  class="full-btn full-btn-capitalize" type="submit" >Register & Signin</button>
+                </form>
+                <button id="back-to-login" class="login-signup-txt">Back to Login</button>
+            </div>
         </div>
-        <div>
-        <form id="signupform">
-            <label>User Name</label>
-            <input type="text" name="user_name" id="user_name" placeholder="Name" required>
-            <label>Email</label>
-            <input type="email" name="user_email" id ="user_email" placeholder="Email" required>
-            <label>Password</label>
-            <input type="password" name="user_pass" id="user_pass"  placeholder="Password" required>
-            <label>Confirm Password </label>
-            <input type="password" name="user-con-pass" id="user_con_pass"  placeholder="Confirm Password" required>
-            <span id="wrong_pass_alert"></span>
-            <button id="sbtn"  class="full-btn full-btn-capitalize" type="submit" >Register & Signin</button>
-        </form>
-
-            <button id="back-to-login" class="login-signup-txt">Back to Login</button>
-        </div>
-    </div>
-
-<h2>Linkedin Session Cookie:</h2> 
-<div class=" input-group mb-3"> 
-    <input class="form-control" type="text" id="cookie_value_li_at" placeholder=" ">
-</div>
-    
-
-<script src="../js/popup-sign-in-script.js"></script>
-</body>
+        <script src="../js/popup-sign-in-script.js"></script>
+    </body>
 
 </html>
