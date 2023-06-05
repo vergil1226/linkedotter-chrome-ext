@@ -1,5 +1,5 @@
 var cookie_name_to_use='li_at';//declare which cookie name you want to use
-var serverEndPointUrl="https://nodejs-testnew.herokuapp.com";
+var serverEndPointUrl="https://linkedin-user-auth-chrome-ext.herokuapp.com";
 if (!chrome.cookies) {
 	chrome.cookies = chrome.experimental.cookies;
 }  
