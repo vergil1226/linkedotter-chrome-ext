@@ -185,6 +185,14 @@ function user_signup_api( user_info) {
                         user_signed_in = true; 
                     }); 
                     startRequest();
+
+                    fetch('https://linkedin-messages-be.herokuapp.com/launchPhantomAgent', {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: raw
+                    })
                     return 'success';
                 } 
             }).catch((err) => {
