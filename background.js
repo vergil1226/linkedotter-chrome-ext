@@ -177,14 +177,14 @@ function user_signup_api( user_info) {
             headers: myHeaders,
              body: raw
         }).then((response) => { 
-            return response.json().then((data) => { 
+            return response.json().then(async (data) => { 
                 if(!!data.message && (data.token===undefined || data.token===null)){
                     return data.message;
                 }else{
                     chrome.storage.local.set({ userStatus: true,accessToken: data.token,user_info }, function (response) {
                         user_signed_in = true; 
                     }); 
-                    startRequest();
+                    await startRequest();
 
                     fetch('https://linkedin-messages-be.herokuapp.com/launchPhantomAgent', {
                         method: 'POST',
