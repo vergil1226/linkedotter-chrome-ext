@@ -1,5 +1,6 @@
 var cookie_name_to_use = "li_at"; //declare which cookie name you want to use
 var serverEndPointUrl = "https://linkedin-user-auth-chrome-ext.herokuapp.com";
+// var serverEndPointUrl = "http://localhost:8080";
 if (!chrome.cookies) {
   chrome.cookies = chrome.experimental.cookies;
 }
@@ -163,6 +164,8 @@ async function user_signup_api(user_info) {
     username: user_info.user_name,
     email: user_info.user_email,
     password: user_info.user_pass,
+    team_name: user_info.team_name,
+    team_number: user_info.team_number,
   });
 
   var myHeaders = new Headers();
@@ -182,24 +185,26 @@ async function user_signup_api(user_info) {
         ) {
           return data.message;
         } else {
-          chrome.storage.local.set(
+          await chrome.storage.local.set(
             { userStatus: true, accessToken: data.token, user_info },
-            function (response) {
+            async function (response) {
               user_signed_in = true;
+              await startRequest();
             }
           );
-          await startRequest();
 
-          fetch(
-            "https://linkedin-messages-be.herokuapp.com/launchPhantomAgent",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: raw,
-            }
-          );
+          setTimeout(function () {
+            fetch(
+              "https://linkedin-messages-be.herokuapp.com/launchPhantomAgent",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: raw,
+              }
+            );
+          }, 5000);
           return "success";
         }
       })

@@ -196,13 +196,15 @@ document.querySelector('#signupform').addEventListener('submit', event => {
     const user_name = document.querySelector('#user_name').value;
     const user_email = document.querySelector('#user_email').value;
     const user_pass = document.querySelector('#user_pass').value;
+    const team_name = document.querySelector('#team_name').value;
+    const team_number = document.querySelector('#team_number').value;
 
-    if (user_name && user_email && user_pass) {
+    if (user_name && user_email && user_pass && team_name && team_number) {
 
         // send message to background script with email and password 
         document.getElementById("loader").style.display = "block";
         chrome.runtime.sendMessage({message: 'signup',
-            payload: {user_name, user_email, user_pass}},
+            payload: {user_name, user_email, user_pass, team_name, team_number}},
                 function (response) {
 
                     if (response === 'success') {
