@@ -1,78 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <div id="loader"></div>
-        <div id="ar-login" class="common-main-div">
-            <div class="ex-login">
-                <div class="ex-login-head">
-                    <img id="logo" src="/assets/img/icon-128x128.png">  <span id="headerTitle">Welcome</span>
-                </div> 
-                <form id="loginform">
-                    <label>Username</label> 
-                    <input type="text" name="email" id="email" value="" placeholder="Username" required>
-
-                    <label>Password</label>
-                    <input type="password" name="password" id="password" value="" placeholder="Password" required>
-
-                    <button  type="submit" >Login</button>
-                </form>
-                <button id="login-signup" class="login-signup-txt">Sign Up</button>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div id="ar-login" class="common-main-div">
+      <div class="ex-login">
+        <div class="ex-login-head">
+          <div class="ex-login-div">
+            <span id="headerTitle">Welcome!</span>
+            <img id="logo" src="/assets/img/icon-128x128.png" />
+          </div>
         </div>
-        <div id="ar-welcome" class="common-main-div">
-            <div class="popup-signout">
-                <div>
-                    <h2>Welcome Dashboard</h2>
-                    <button id="wl-dash" type="submit">Sign Out</button>
-                </div>
-            </div>
-        </div>
-        <div id="ar-logout" class="common-main-div">
-            <div class="wel-back">
-                <div>
-                    <div> <img id="logo" src="/assets/img/icon-128x128.png"><span id="message">Linkedin Session Cookie</span><span id="name"></span>  </div>
-                    <div class=" input-group mt-10"> 
-                        <input class="form-control" type="text" id="cookie_value_li_at" placeholder=" ">
-                         <img id="clipboard" src="/assets/img/copy.png"> <span id="copyClipboard">Click to Copy</span>
-                    </div>
+        <form id="loginform">
+          <div class="icon-label">
+            <img src="/assets/img/toe.png" />
+            <label>User Name</label>
+          </div>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            value=""
+            placeholder="Enter Your Name"
+            style="
+              background-image: url('/assets/img/user.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
 
-                    <button id="wl-button" type="submit">Sign Out</button>
-                    <span id="messageData"></span>
-                </div>
-            </div>
-        </div>
-        <div id="signup-form" class="common-main-div">
-            <div class="ex-login-head">
-                <h2>Sign up</h2>
-                <br/>
-            </div>
-            <div>
-                <form id="signupform">
-                    <label>User Name</label>
-                    <input type="text" name="user_name" id="user_name" placeholder="Name" required>
-                    <label>Email</label>
-                    <input type="email" name="user_email" id ="user_email" placeholder="Email" required>
-                    <label>Team Name</label>
-                    <input type="text" name="team_name" id ="team_name" placeholder="Team name" required>
-                    <label>Team Number</label>
-                    <input type="text" name="team_number" id ="team_number" placeholder="Team number" required>
-                    <label>Password</label>
-                    <input type="password" name="user_pass" id="user_pass"  placeholder="Password" required>
-                    <label>Confirm Password </label>
-                    <input type="password" name="user-con-pass" id="user_con_pass"  placeholder="Confirm Password" required>
-                    <span id="wrong_pass_alert"></span>
-                    <button id="sbtn"  class="full-btn full-btn-capitalize" type="submit" >Register & Signin</button>
-                </form>
-                <button id="back-to-login" class="login-signup-txt">Back to Login</button>
-            </div>
-        </div>
-        <script src="../js/popup-sign-in-script.js"></script>
-    </body>
+          <div class="icon-label">
+            <img src="/assets/img/toe.png" />
+            <label>Password</label>
+          </div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value=""
+            placeholder="Enter your password"
+            style="
+              background-image: url('/assets/img/key.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
 
+          <button type="submit">Log In</button>
+        </form>
+        <button id="login-signup" class="login-signup-txt">Sign Up</button>
+      </div>
+    </div>
+    <div id="ar-welcome" class="common-main-div">
+      <div class="popup-signout">
+        <div>
+          <h2>Welcome Dashboard</h2>
+          <button id="wl-dash" type="submit">Sign Out</button>
+        </div>
+      </div>
+    </div>
+    <div id="ar-logout" class="common-main-div">
+      <div class="ex-login-head" style="position: relative; padding-top: 20px">
+        <div class="ex-login-div" style="margin-top: 10px">
+          <span
+            id="headerTitle"
+            style="line-height: 23px; text-align: center; display: flex"
+            >LinkedIn<br />Session Cookie</span
+          >
+          <img id="logo" src="/assets/img/icon-128x128.png" style="top: 20px" />
+        </div>
+      </div>
+      <div style="display: flex; align-items: center">
+        <div class="input-group">
+          <div class="icon-label">
+            <img src="/assets/img/toe.png" />
+            <label>Cookie Value</label>
+          </div>
+          <input
+            class="form-control"
+            type="text"
+            id="cookie_value_li_at"
+            style="padding-left: 3px; width: 89%"
+            placeholder=" "
+          />
+          <img id="clipboard" src="/assets/img/copy.png" />
+        </div>
+      </div>
+      <button id="wl-button" type="submit">Sign Out</button>
+      <span id="messageData"></span>
+    </div>
+    <div id="signup-form" class="common-main-div">
+      <div class="ex-login-head">
+        <div class="ex-login-div" style="margin-top: 10px">
+          <span id="headerTitle">Sing Up</span>
+          <img id="logo" src="/assets/img/icon-128x128.png" />
+        </div>
+      </div>
+      <div>
+        <form id="signupform" style="margin-top: -10px">
+          <div class="icon-label sign-up-label">
+            <img src="/assets/img/toe.png" />
+            <label>User Name</label>
+          </div>
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            placeholder="Name"
+            style="
+              background-image: url('/assets/img/user.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
+          <div class="icon-label sign-up-label">
+            <img src="/assets/img/toe.png" />
+            <label>Email</label>
+          </div>
+          <input
+            type="email"
+            name="user_email"
+            id="user_email"
+            placeholder="Email"
+            style="
+              background-image: url('/assets/img/mail.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
+          <!-- <div class="icon-label sign-up-label">
+            <img src="/assets/img/toe.png" />
+            <label>Team Name</label>
+          </div>
+          <input
+            type="text"
+            name="team_name"
+            id="team_name"
+            placeholder="Team name"
+            required
+          /> -->
+          <div class="icon-label sign-up-label">
+            <img src="/assets/img/toe.png" />
+            <label>Password</label>
+          </div>
+          <input
+            type="password"
+            name="user_pass"
+            id="user_pass"
+            placeholder="Your Password"
+            style="
+              background-image: url('/assets/img/key.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
+          <div class="icon-label sign-up-label">
+            <img src="/assets/img/toe.png" />
+            <label>Confirm Password</label>
+          </div>
+          <input
+            type="password"
+            name="user-con-pass"
+            id="user_con_pass"
+            placeholder="Confirm Your Password"
+            style="
+              background-image: url('/assets/img/key.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
+          <div class="icon-label sign-up-label">
+            <img src="/assets/img/toe.png" />
+            <label>Team ID</label>
+          </div>
+          <input
+            type="text"
+            name="team_number"
+            id="team_number"
+            placeholder="Enter Your Team ID"
+            style="
+              background-image: url('/assets/img/passcode.png');
+              background-repeat: no-repeat;
+              background-position: left 14px center;
+            "
+            required
+          />
+          <span id="wrong_pass_alert"></span>
+          <button id="sbtn" type="submit" style="margin-top: 15px">
+            Register & Signin
+          </button>
+        </form>
+        <button id="back-to-login" class="login-signup-txt">
+          Back to Login
+        </button>
+      </div>
+    </div>
+    <script src="../js/popup-sign-in-script.js"></script>
+  </body>
 </html>
